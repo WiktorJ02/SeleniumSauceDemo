@@ -1,0 +1,14 @@
+{
+  "browser": "CHROME",
+  "BASE_URL": "https://www.saucedemo.com/",
+  "LOG_IN_URL": "https://www.saucedemo.com/",
+  "PRODUCTS_PAGE_URL": "https://www.saucedemo.com/inventory.html",
+  "CART_URL": "https://www.saucedemo.com/cart.html",
+  "CHECKOUT_URL": "https://www.saucedemo.com/checkout-step-one.html",
+  "CHECKOUT_TWO_URL": "https://www.saucedemo.com/checkout-step-two.html",
+  "CHECKOUT_COMPLETE_URL": "https://www.saucedemo.com/checkout-complete.html",
+  "prefixOneProductInBasket": "There is",
+  "suffixOneProductInBasket": "item in your cart.",
+  "prefixProductsInBasket": "There are",
+  "suffixProductsInBasket": "items in your cart."
+}

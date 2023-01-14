@@ -1,0 +1,38 @@
+package Pages.Base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Random;
+
+public class BasePage {
+
+    public WebDriverWait wait;
+    public WebDriver driver;
+
+
+    public BasePage(WebDriver driver) {
+
+        this.driver = driver;
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    }
+
+    public void waitToBeClickable(WebElement webElement) {
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+
+    public void click(WebElement webElement) {
+        waitToBeClickable(webElement);
+        webElement.click();
+    }
+
+    public static int randomIntInBound(int bound) {
+        Random random = new Random();
+        return random.nextInt(bound);
+    }
+
+}
