@@ -18,12 +18,12 @@ public class LogInPage extends BasePage {
     @FindBy(xpath = "//input[@id='login-button']")
     WebElement logInButton;
 
-    @FindBy(css = ".login-logo")
+    @FindBy(xpath = "//div[@class='login_logo']")
     WebElement logInPageElement;
 
     public LogInPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
+
     }
 
     public LogInPage sendKeysToElement(WebElement webElement, String keys) {

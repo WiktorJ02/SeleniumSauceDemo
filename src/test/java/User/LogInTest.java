@@ -15,6 +15,8 @@ public class LogInTest extends Pages {
     @Test
     public void LogInPageLoaded() {
         Assert.assertTrue(logInPage.pageLoaded());
+        Assert.assertEquals(driver.getCurrentUrl(), config.getLOG_IN_URL());
+        Assert.assertTrue(logInPage.pageLoaded());
         String URL = driver.getCurrentUrl();
         Assert.assertEquals(URL, config.getLOG_IN_URL());
     }
@@ -23,14 +25,14 @@ public class LogInTest extends Pages {
     public void LogInStandardUser() {
         logInPage.logInUser(userFactory.getStandardUser());
         Assert.assertTrue(mainPage.pageLoaded());
-        Assert.assertEquals(driver.getCurrentUrl(), config.getBASE_URL());
+        Assert.assertEquals(driver.getCurrentUrl(), config.getPRODUCTS_PAGE_URL());
     }
 
     @Test
     void SignOutUser() {
-        driver.get(config.getBASE_URL());
+        logInPage.logInUser(userFactory.getStandardUser());
         mainPage.logOut();
         Assert.assertTrue(logInPage.pageLoaded());
-        Assert.assertEquals(driver.getCurrentUrl(), config.getLOG_IN_URL());
+        Assert.assertEquals(driver.getCurrentUrl(), config.getBASE_URL());
     }
 }

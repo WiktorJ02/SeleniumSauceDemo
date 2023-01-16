@@ -11,7 +11,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//button[@id='react-burger-menu-btn']")
     WebElement menuButton;
 
-    @FindBy(xpath = "//a[@id='logout_sidebar_link']")
+    @FindBy(id = "logout_sidebar_link")
     WebElement logOutButton;
 
     @FindBy(css = ".inventory_list")
@@ -47,7 +47,7 @@ public class MainPage extends BasePage {
 
     public void logOut() {
         menuButton.click();
-        logOutButton.click();
+        click(logOutButton);
     }
 
 

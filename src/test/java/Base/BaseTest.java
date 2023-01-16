@@ -1,13 +1,12 @@
 package Base;
 
-import Enum.Browser;
 
 import Common.Config;
 import Common.DriverFactory;
 import Common.UserFactory;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import java.io.FileNotFoundException;
 
@@ -21,8 +20,8 @@ public class BaseTest {
     public void setup() throws FileNotFoundException {
         DriverFactory driverFactory = new DriverFactory();
         config.loadConfig();
-        driver = driverFactory.getDriver(Browser.valueOf(config.getBrowser()));
-        driver.get(config.getBASE_URL());
+        driver = driverFactory.getDriver(config.getBrowser());
+        driver.get(config.getLOG_IN_URL());
         driver.manage().window().maximize();
     }
 

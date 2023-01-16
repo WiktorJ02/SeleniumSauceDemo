@@ -16,13 +16,16 @@ public class BasePage {
 
 
     public BasePage(WebDriver driver) {
-
+        PageFactory.initElements(driver, this);
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     public void waitToBeClickable(WebElement webElement) {
         wait.until(ExpectedConditions.elementToBeClickable(webElement));
+    }
+    public void waitToBeDisplayed(WebElement webElement) {
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 
     public void click(WebElement webElement) {
